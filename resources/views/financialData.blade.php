@@ -10,10 +10,10 @@
         <div class="card-body">
           <div class="row">
           <div class="col-9">
-            <input type="text" class="form-control" id="search"/>
+            <input type="text" class="form-control" id="search" value="AAPL"/>
           </div>
           <div class="col-3 d-grid gap-2">
-            <button type="button" class="btn btn-primary">Search</button>
+            <button type="button" class="btn btn-primary" onclick="stockSearch()">Search</button>
           </div>
           </div>
 
@@ -22,7 +22,7 @@
 
       <div class="card" id="wdata">
             <div class="card-body pt-4">
-      
+              <h5 class="card-title">Stock Ticker : <span id="company-ticker">AAPL</span></h5>
               <ul class="nav nav-tabs nav-tabs-bordered">
       
                 <li class="nav-item">
@@ -38,10 +38,10 @@
                 </li>
       
               </ul>
-              <div class="tab-content pt-2">
+              <div class="tab-content pt-3">
       
-                <div class="tab-pane fade show active" id="cashflow">
-                  <div class="cashflow-holder">
+                <div class="tab-pane fade show active pt-3" id="cashflow">
+                  <div class="cashflow-holder data">
                     <table class="d-init table table-bordered">
                       <thead>
                       <tr>
@@ -297,10 +297,13 @@
                       </tbody>
                     </table>
                   </div>
+                  <div class="no-data">
+                    <h4>Loading...</h4>
+                  </div>
                 </div>
       
                 <div class="tab-pane fade pt-3" id="income">
-                  <div class="income-holder">
+                  <div class="income-holder data">
                     <table class="d-init table table-bordered">
                       <thead>
                       <tr>
@@ -524,10 +527,13 @@
                       </tbody>
                     </table>
                   </div>
+                  <div class="no-data">
+                    <h4>Loading...</h4>
+                  </div>
                 </div>
       
                 <div class="tab-pane fade pt-3" id="balance">
-                  <div class="balance-holder">
+                  <div class="balance-holder data">
                     <table class="d-init table table-bordered">
                       <thead>
                       <tr>
@@ -895,6 +901,9 @@
                       </tbody>
                     </table>
                   </div>
+                  <div class="no-data">
+                    <h4>Loading...</h4>
+                  </div>
                 </div>
       
               </div>
@@ -911,6 +920,7 @@
 th.centered,td{
   text-align: center;
 }
+
 </style>
 
 @section('script')
@@ -929,6 +939,31 @@ th.centered,td{
     var fisURL = "";
     var fbsURL = "";
 
+    const dataBox = Array.from(document.getElementsByClassName('data'));
+    const NoDataBox = Array.from(document.getElementsByClassName('no-data'));
+
+    urlMaking();
+
+    function stockSearch(){
+      if(document.getElementById('search').value !== ""){
+      stock = document.getElementById('search').value;
+      document.getElementById('company-ticker').innerHTML = stock;
+
+      dataBox.forEach(box => {
+        box.style.display = 'none';
+      });
+
+      NoDataBox.forEach(box => {
+        box.style.display = 'block';
+      });
+
+      urlMaking();
+      
+      }else{
+        alert("Please Insert Stock Ticker");
+      }
+    }
+
     function urlMaking(){
       fcfURL = baseURL + cfURL + tokenUrl + token;
       fisURL = baseURL + isURL + tokenUrl + token;
@@ -938,9 +973,19 @@ th.centered,td{
       fisURL = fisURL.replace("{symbol}",stock);
       fbsURL = fbsURL.replace("{symbol}",stock);
       
+      console.log(stock);
+
       getRequest(fisURL,drawOutputIncome);
       getRequest(fbsURL,drawOutputBalance);
       getRequest(fcfURL,drawOutputCashflow);
+      
+      dataBox.forEach(box => {
+        box.style.display = 'block';
+      });
+
+      NoDataBox.forEach(box => {
+        box.style.display = 'none';
+      });
     }
 
     function drawOutputIncome(responseText) {
