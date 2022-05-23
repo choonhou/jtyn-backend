@@ -921,6 +921,10 @@ th.centered,td{
   text-align: center;
 }
 
+table{
+  background:white;
+}
+
 </style>
 
 @section('script')
