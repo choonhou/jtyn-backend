@@ -36,13 +36,17 @@
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#balance">Balance Sheet</button>
                 </li>
+                
+                <li class="nav-item">
+                  <button class="nav-link ratio-tab" data-bs-toggle="tab" data-bs-target="#ratio">Ratio</button>
+                </li>
       
               </ul>
               <div class="tab-content pt-3">
       
                 <div class="tab-pane fade show active pt-3" id="cashflow">
                   <div class="cashflow-holder data">
-                    <table class="d-init table table-bordered">
+                    <table class="d-init table">
                       <thead>
                       <tr>
                         <th></th>
@@ -55,7 +59,7 @@
                       </thead>
                       <tbody>
                       <tr>
-                        <th>Net Income</th>
+                        <th class="nTotal">Net Income</th>
                         <td id="cashflow-netIncome-0"></td>
                         <td id="cashflow-netIncome-1"></td>
                         <td id="cashflow-netIncome-2"></td>
@@ -271,7 +275,7 @@
                         <td id="cashflow-cashAtBeginningOfPeriod-4"></td>
                       </tr>
                       <tr>
-                        <th>Operating Cash Flow</th>
+                        <th class="nTotal">Operating Cash Flow</th>
                         <td id="cashflow-operatingCashFlow-0"></td>
                         <td id="cashflow-operatingCashFlow-1"></td>
                         <td id="cashflow-operatingCashFlow-2"></td>
@@ -287,7 +291,7 @@
                         <td id="cashflow-capitalExpenditure-4"></td>
                       </tr>
                       <tr>
-                        <th>Free Cash Flow</th>
+                        <th class="nTotal">Free Cash Flow</th>
                         <td id="cashflow-freeCashFlow-0"></td>
                         <td id="cashflow-freeCashFlow-1"></td>
                         <td id="cashflow-freeCashFlow-2"></td>
@@ -304,7 +308,7 @@
       
                 <div class="tab-pane fade pt-3" id="income">
                   <div class="income-holder data">
-                    <table class="d-init table table-bordered">
+                    <table class="d-init table">
                       <thead>
                       <tr>
                         <th></th>
@@ -317,7 +321,7 @@
                       </thead>
                       <tbody>
                       <tr>
-                        <th>Revenue</th>
+                        <th class="nTotal">Revenue</th>
                         <td id="income-revenue-0"></th>
                         <td id="income-revenue-1"></td>
                         <td id="income-revenue-2"></td>
@@ -333,7 +337,7 @@
                         <td id="income-costOfRevenue-4"></td>
                       </tr>
                       <tr>
-                        <th>Gross Profit</th>
+                        <th class="nTotal">Gross Profit</th>
                         <td id="income-grossProfit-0"></th>
                         <td id="income-grossProfit-1"></td>
                         <td id="income-grossProfit-2"></td>
@@ -389,7 +393,7 @@
                         <td id="income-otherExpenses-4"></td>
                       </tr>
                       <tr>
-                        <th>Operating Expenses</th>
+                        <th class="nTotal">Operating Expenses</th>
                         <td id="income-operatingExpenses-0"></th>
                         <td id="income-operatingExpenses-1"></td>
                         <td id="income-operatingExpenses-2"></td>
@@ -445,7 +449,7 @@
                         <td id="income-ebitdaratio-4"></td>
                       </tr>
                       <tr>
-                        <th>Operating Income</th>
+                        <th class="nTotal">Operating Income</th>
                         <td id="income-operatingIncome-0"></th>
                         <td id="income-operatingIncome-1"></td>
                         <td id="income-operatingIncome-2"></td>
@@ -493,7 +497,7 @@
                         <td id="income-incomeTaxExpense-4"></td>
                       </tr>
                       <tr>
-                        <th>Net Income</th>
+                        <th class="nTotal">Net Income</th>
                         <td id="income-netIncome-0"></th>
                         <td id="income-netIncome-1"></td>
                         <td id="income-netIncome-2"></td>
@@ -534,7 +538,7 @@
       
                 <div class="tab-pane fade pt-3" id="balance">
                   <div class="balance-holder data">
-                    <table class="d-init table table-bordered">
+                    <table class="d-init table">
                       <thead>
                       <tr>
                         <th></th>
@@ -595,7 +599,7 @@
                         <td id="balance-otherCurrentAssets-4"></td>
                       </tr>
                       <tr>
-                        <th>Total Current Assets</th>
+                        <th class="nTotal">Total Current Assets</th>
                         <td id="balance-totalCurrentAssets-0"></td>
                         <td id="balance-totalCurrentAssets-1"></td>
                         <td id="balance-totalCurrentAssets-2"></td>
@@ -675,7 +679,7 @@
                         <td id="balance-otherAssets-4"></td>
                       </tr>
                       <tr>
-                        <th>Total Assets</th>
+                        <th class="nTotal">Total Assets</th>
                         <td id="balance-totalAssets-0"></td>
                         <td id="balance-totalAssets-1"></td>
                         <td id="balance-totalAssets-2"></td>
@@ -723,7 +727,7 @@
                         <td id="balance-otherCurrentLiabilities-4"></td>
                       </tr>
                       <tr>
-                        <th>Total Current Liabilities</th>
+                        <th class="nTotal">Total Current Liabilities</th>
                         <td id="balance-totalCurrentLiabilities-0"></td>
                         <td id="balance-totalCurrentLiabilities-1"></td>
                         <td id="balance-totalCurrentLiabilities-2"></td>
@@ -787,7 +791,7 @@
                         <td id="balance-capitalLeaseObligations-4"></td>
                       </tr>
                       <tr>
-                        <th>Total Liabilities</th>
+                        <th class="nTotal">Total Liabilities</th>
                         <td id="balance-totalLiabilities-0"></td>
                         <td id="balance-totalLiabilities-1"></td>
                         <td id="balance-totalLiabilities-2"></td>
@@ -835,7 +839,7 @@
                         <td id="balance-othertotalStockholdersEquity-4"></td>
                       </tr>
                       <tr>
-                        <th>Total Stockholders Equity</th>
+                        <th class="nTotal">Total Stockholders Equity</th>
                         <td id="balance-totalStockholdersEquity-0"></td>
                         <td id="balance-totalStockholdersEquity-1"></td>
                         <td id="balance-totalStockholdersEquity-2"></td>
@@ -843,7 +847,7 @@
                         <td id="balance-totalStockholdersEquity-4"></td>
                       </tr>
                       <tr>
-                        <th>Total Liabilities & Stockholders Equity</th>
+                        <th class="nTotal">Total Liabilities & Stockholders Equity</th>
                         <td id="balance-totalLiabilitiesAndStockholdersEquity-0"></td>
                         <td id="balance-totalLiabilitiesAndStockholdersEquity-1"></td>
                         <td id="balance-totalLiabilitiesAndStockholdersEquity-2"></td>
@@ -905,6 +909,116 @@
                     <h4>Loading...</h4>
                   </div>
                 </div>
+
+                <div class="tab-pane fade pt-3" id="ratio">
+                  <div class="ratio-holder data">
+                    <table class="d-init table">
+                      <thead>
+                      <tr>
+                        <th></th>
+                        <th class="centered" id="ratio-calendarYear-0"></th>
+                        <th class="centered" id="ratio-calendarYear-1"></th>
+                        <th class="centered" id="ratio-calendarYear-2"></th>
+                        <th class="centered" id="ratio-calendarYear-3"></th>
+                        <th class="centered" id="ratio-calendarYear-4"></th>
+                      </tr>
+                      </thead>
+                      <tbody>                    
+                      <tr>
+                        <th class="nTotal" class="nTotal">Debt Ratio</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>Current Ratio</th>
+                        <td id="ratio-current-0"></td>
+                        <td id="ratio-current-1"></td>
+                        <td id="ratio-current-2"></td>
+                        <td id="ratio-current-3"></td>
+                        <td id="ratio-current-4"></td>
+                      </tr>
+                      <tr>
+                        <th>Debt to Equity Ratio</th>
+                        <td id="ratio-dte-0"></td>
+                        <td id="ratio-dte-1"></td>
+                        <td id="ratio-dte-2"></td>
+                        <td id="ratio-dte-3"></td>
+                        <td id="ratio-dte-4"></td>
+                      </tr>
+                      <tr>
+                        <th class="nTotal">Profitability Ratio</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>Price to Earning Ratio</th>
+                        <td id="ratio-pe-0">-</td>
+                        <td id="ratio-pe-1">-</td>
+                        <td id="ratio-pe-2">-</td>
+                        <td id="ratio-pe-3">-</td>
+                        <td id="ratio-pe-4">-</td>
+                      </tr>
+                      <tr>
+                        <th>Price to Book Ratio</th>
+                        <td id="ratio-pb-0">-</td>
+                        <td id="ratio-pb-1">-</td>
+                        <td id="ratio-pb-2">-</td>
+                        <td id="ratio-pb-3">-</td>
+                        <td id="ratio-pb-4">-</td>
+                      </tr>
+                      <tr>
+                        <th>Price to Cash Flow Ratio</th>
+                        <td id="ratio-pc-0">-</td>
+                        <td id="ratio-pc-1">-</td>
+                        <td id="ratio-pc-2">-</td>
+                        <td id="ratio-pc-3">-</td>
+                        <td id="ratio-pc-4">-</td>
+                      </tr>
+                      <tr>
+                        <th class="nTotal">Effectiveness Ratio</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th>ROE</th>
+                        <td id="ratio-roe-0"></td>
+                        <td id="ratio-roe-1"></td>
+                        <td id="ratio-roe-2"></td>
+                        <td id="ratio-roe-3"></td>
+                        <td id="ratio-roe-4"></td>
+                      </tr>
+                      <tr>
+                        <th>ROA</th>
+                        <td id="ratio-roa-0"></td>
+                        <td id="ratio-roa-1"></td>
+                        <td id="ratio-roa-2"></td>
+                        <td id="ratio-roa-3"></td>
+                        <td id="ratio-roa-4"></td>
+                      </tr>
+                      <tr>
+                        <th>ROIC</th>
+                        <td id="ratio-roic-0"></td>
+                        <td id="ratio-roic-1"></td>
+                        <td id="ratio-roic-2"></td>
+                        <td id="ratio-roic-3"></td>
+                        <td id="ratio-roic-4"></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="no-data">
+                    <h4>Loading...</h4>
+                  </div>
+                </div>
       
               </div>
       
@@ -925,6 +1039,20 @@ table{
   background:white;
 }
 
+tbody tr th:not(.nTotal){
+  padding-left:25px;
+  font-weight: 500;
+}
+
+td{
+  border-color:rgba(0,0,0,0.10)!important;
+}
+
+table{
+  max-width: 100vw;
+  width:100vw;
+}
+
 </style>
 
 @section('script')
@@ -932,36 +1060,45 @@ table{
     internationalNumberFormat = new Intl.NumberFormat('en-US');
     var stock = "AAPL";
     var baseURL = '{{env('API_BASEURL')}}';
-    var cfURL = "/api/v3/cash-flow-statement/{symbol}?limit=5";
-    var isURL ="/api/v3/income-statement/{symbol}?limit=5";
-    var bsURL = "/api/v3/balance-sheet-statement/{symbol}?limit=5";
+    var cfURL = "/api/v3/cash-flow-statement/{symbol}?limit=5&";
+    var isURL ="/api/v3/income-statement/{symbol}?limit=5&";
+    var bsURL = "/api/v3/balance-sheet-statement/{symbol}?limit=5&";
+    var coURL = "/api/v3/profile/{symbol}?";
 
-    var tokenUrl = "&apikey="
+    var fis = [];
+    var fcf = [];
+    var fbs = [];
+    var cov = [];
+
+    var tokenUrl = "apikey="
     var token = '{{env('API_TOKEN')}}';
 
     var fcfURL = "";
     var fisURL = "";
     var fbsURL = "";
+    var covURL = "";
 
     const dataBox = Array.from(document.getElementsByClassName('data'));
     const NoDataBox = Array.from(document.getElementsByClassName('no-data'));
 
-    urlMaking();
+    stockSearch();
 
     function stockSearch(){
       if(document.getElementById('search').value !== ""){
       stock = document.getElementById('search').value;
       document.getElementById('company-ticker').innerHTML = stock;
+      
+      showLoading();
 
-      dataBox.forEach(box => {
-        box.style.display = 'none';
+      const LoadingPromise = new Promise(function(resolve,reject){
+        urlMaking();
+        setTimeout(()=>resolve(),3000);
       });
 
-      NoDataBox.forEach(box => {
-        box.style.display = 'block';
+      LoadingPromise.then(()=>{
+        hideLoading();
+        calcRatio();
       });
-
-      urlMaking();
       
       }else{
         alert("Please Insert Stock Ticker");
@@ -969,39 +1106,67 @@ table{
     }
 
     function urlMaking(){
+      return new Promise(function(resolve, reject) {
       fcfURL = baseURL + cfURL + tokenUrl + token;
       fisURL = baseURL + isURL + tokenUrl + token;
       fbsURL = baseURL + bsURL + tokenUrl + token;
+      covURL = baseURL + coURL + tokenUrl + token;
 
       fcfURL = fcfURL.replace("{symbol}",stock);
       fisURL = fisURL.replace("{symbol}",stock);
       fbsURL = fbsURL.replace("{symbol}",stock);
-      
-      console.log(stock);
+      covURL = covURL.replace("{symbol}",stock);
 
       getRequest(fisURL,drawOutputIncome);
       getRequest(fbsURL,drawOutputBalance);
       getRequest(fcfURL,drawOutputCashflow);
+      getRequest(covURL,getOutputCompanyOverview);
       
+      resolve();
+      })
+    }
+  
+    function showLoading(){
       dataBox.forEach(box => {
-        box.style.display = 'block';
-      });
+          box.style.display = 'none';
+        });
 
-      NoDataBox.forEach(box => {
-        box.style.display = 'none';
-      });
+        NoDataBox.forEach(box => {
+          box.style.display = 'block';
+        });
     }
 
+    function hideLoading(){
+        dataBox.forEach(box => {
+          box.style.display = 'block';
+        });
+
+        NoDataBox.forEach(box => {
+          box.style.display = 'none';
+        });
+
+    }
+
+    function getOutputCompanyOverview(responseText) {
+      return new Promise(function(resolve, reject) {
+      let resp = JSON.parse(responseText);
+      cov = resp;
+      resolve();
+    })
+    }
+    
     function drawOutputIncome(responseText) {
-     let resp = JSON.parse(responseText);
-     let financials = resp;
+      return new Promise(function(resolve, reject) {
+      let resp = JSON.parse(responseText);
+      fis = resp;
+      let financials = resp;
 
-     for (let i = 0; i < financials.length; i++) {
-       let financial = financials[i];
+      for (let i = 0; i < financials.length; i++) {
+        let financial = financials[i];
 
-       var z = 0;
-       for (var key2 in financial) {
-         if (financial.hasOwnProperty(key2)) {
+        var z = 0;
+        for (var key2 in financial) {
+          if (financial.hasOwnProperty(key2)) {
           var id = "income-"+key2+"-"+i;
           var el = document.getElementById(id);
           if(el !== null){
@@ -1023,114 +1188,177 @@ table{
               }
             }
           }
-         }
-         z++;
-       }
-     }
-   }
+          }
+          z++;
+        }
+      }
+      resolve();
+    })
+    }
 
-   function drawOutputBalance(responseText) {
-     let resp = JSON.parse(responseText);
-     let financials = resp;
+    function drawOutputBalance(responseText) {
+      return new Promise(function(resolve, reject) {
+      let resp = JSON.parse(responseText);
+      fbs = resp;
+      let financials = resp;
 
-     for (let i = 0; i < financials.length; i++) {
-       let financial = financials[i];
+      for (let i = 0; i < financials.length; i++) {
+        let financial = financials[i];
 
-       var z = 0;
-       for (var key2 in financial) {
-         if (financial.hasOwnProperty(key2)) {
-          var id = "balance-"+key2+"-"+i;
-          var el = document.getElementById(id);
-          if(el !== null){
-            if(id.includes("Year")){
-              el.innerHTML = financial[key2];
-            }else{
-              if(id.includes("Ratio") || id.includes("ratio") || id.includes("eps")){
-                el.innerHTML = financial[key2].toFixed(4);
+        var z = 0;
+        for (var key2 in financial) {
+          if (financial.hasOwnProperty(key2)) {
+            var id = "balance-"+key2+"-"+i;
+            var el = document.getElementById(id);
+            if(el !== null){
+              if(id.includes("Year")){
+                el.innerHTML = financial[key2];
               }else{
-                if(financial[key2] === 0){
-                  el.innerHTML = "-";
+                if(id.includes("Ratio") || id.includes("ratio") || id.includes("eps")){
+                  el.innerHTML = financial[key2].toFixed(4);
                 }else{
-                  if(financial[key2] > 0){
-                    el.innerHTML = internationalNumberFormat.format((financial[key2]/1000000));
+                  if(financial[key2] === 0){
+                    el.innerHTML = "-";
                   }else{
-                    el.innerHTML = "("+internationalNumberFormat.format((0-financial[key2]/1000000))+")";
+                    if(financial[key2] > 0){
+                      el.innerHTML = internationalNumberFormat.format((financial[key2]/1000000));
+                    }else{
+                      el.innerHTML = "("+internationalNumberFormat.format((0-financial[key2]/1000000))+")";
+                    }
                   }
                 }
               }
             }
           }
-         }
-         z++;
-       }
-     }
-   }
+          z++;
+        }
+      }
+      resolve();
+    });
+    }
 
-   function drawOutputCashflow(responseText) {
-     let resp = JSON.parse(responseText);
-     let financials = resp;
+    function drawOutputCashflow(responseText) {
+      return new Promise(function(resolve, reject) {
+      let resp = JSON.parse(responseText);
+      fcf = resp;
+      let financials = resp;
 
-     for (let i = 0; i < financials.length; i++) {
-       let financial = financials[i];
+      for (let i = 0; i < financials.length; i++) {
+        let financial = financials[i];
 
-       var z = 0;
-       for (var key2 in financial) {
-         if (financial.hasOwnProperty(key2)) {
-          var id = "cashflow-"+key2+"-"+i;
-          var el = document.getElementById(id);
-          if(el !== null){
-            if(id.includes("Year")){
-              el.innerHTML = financial[key2];
-            }else{
-              if(id.includes("Ratio") || id.includes("ratio") || id.includes("eps")){
-                el.innerHTML = financial[key2].toFixed(4);
+        var z = 0;
+        for (var key2 in financial) {
+          if (financial.hasOwnProperty(key2)) {
+            var id = "cashflow-"+key2+"-"+i;
+            var el = document.getElementById(id);
+            if(el !== null){
+              if(id.includes("Year")){
+                el.innerHTML = financial[key2];
               }else{
-                if(financial[key2] === 0){
-                  el.innerHTML = "-";
+                if(id.includes("Ratio") || id.includes("ratio") || id.includes("eps")){
+                  el.innerHTML = financial[key2].toFixed(4);
                 }else{
-                  if(financial[key2] > 0){
-                    el.innerHTML = internationalNumberFormat.format((financial[key2]/1000000));
+                  if(financial[key2] === 0){
+                    el.innerHTML = "-";
                   }else{
-                    el.innerHTML = "("+internationalNumberFormat.format((0-financial[key2]/1000000))+")";
+                    if(financial[key2] > 0){
+                      el.innerHTML = internationalNumberFormat.format((financial[key2]/1000000));
+                    }else{
+                      el.innerHTML = "("+internationalNumberFormat.format((0-financial[key2]/1000000))+")";
+                    }
                   }
                 }
               }
             }
           }
-         }
-         z++;
-       }
-     }
-   }
+          z++;
+        }
+      }
+      resolve();
+    });
+    }
 
-   function getRequest(url, success) {
-     var req = false;
-     try {
-       req = new XMLHttpRequest();
-     } catch (e) {
-       try {
-         req = new ActiveXObject("Msxml2.XMLHTTP");
-       } catch (e) {
-         try {
-           req = new ActiveXObject("Microsoft.XMLHTTP");
-         } catch (e) {
-           return false;
-         }
-       }
-     }
-     if (!req) return false;
-     if (typeof success != 'function') success = function() {};
-     req.onreadystatechange = function() {
-       if (req.readyState == 4) {
-         if (req.status === 200) {
-           success(req.responseText)
-         }
-       }
-     }
-     req.open("GET", url, true);
-     req.send(null);
-     return req;
-   }
+    function getRequest(url, success) {
+      new Promise((resolve, reject) => {
+      var req = false;
+      try {
+        req = new XMLHttpRequest();
+      } catch (e) {
+        try {
+          req = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+          try {
+            req = new ActiveXObject("Microsoft.XMLHTTP");
+          } catch (e) {
+            return false;
+          }
+        }
+      }
+      if (!req) return false;
+      if (typeof success != 'function') success = function() {};
+      req.onreadystatechange = function() {
+        if (req.readyState == 4) {
+          if (req.status === 200) {
+            success(req.responseText)
+          }
+        }
+      }
+      req.open("GET", url, true);
+      req.send(null);
+      return req;
+      });
+    }
+
+    function calcRatio(){
+      var currentRatio = [];
+      var dte = [];
+      var pe = [];
+      var pb = [];
+      var pc = [];
+      var roe = [];
+      var roa = [];
+      var roic = [];
+
+      for(i = 0; i < 5; i++){
+        //ratio-current-
+        //ratio-dte-
+        //ratio-pe-
+        //ratio-pb-
+        //ratio-pc-
+        //ratio-roe-
+        //ratio-roa-
+        //ratio-roic-
+        document.getElementById('ratio-calendarYear-'+i).innerHTML = document.getElementById('balance-calendarYear-'+i).innerHTML;
+        
+        currentRatio[i] = (fbs[i]['totalCurrentAssets'] / fbs[i]["totalCurrentLiabilities"]).toFixed(2);
+        document.getElementById("ratio-current-"+i).innerHTML = currentRatio[i];
+
+        dte[i] = (fbs[i]['totalDebt'] / fbs[i]['totalStockholdersEquity']).toFixed(2);
+        document.getElementById("ratio-dte-"+i).innerHTML = dte[i];
+
+        if(i == 0){
+          pe[i] = (cov[i]['price'] / fis[i]['eps']).toFixed(2);;
+          document.getElementById("ratio-pe-0").innerHTML = pe[i];
+
+          pb[i] = (cov[i]['mktCap'] / (fbs[i]['totalAssets'] - fbs[i]['totalLiabilities'])).toFixed(2);;
+          document.getElementById("ratio-pb-0").innerHTML = pb[i];
+
+          pc[i] = (cov[i]['mktCap'] / fcf[i]['operatingCashFlow']).toFixed(2);
+          document.getElementById("ratio-pc-0").innerHTML = pc[i];
+
+        }
+
+        roe[i] = (fcf[i]['netIncome'] / fbs[i]["totalStockholdersEquity"] * 100).toFixed(2) + "%";
+        document.getElementById("ratio-roe-"+i).innerHTML = roe[i];
+
+        roa[i] = (fcf[i]['netIncome'] / fbs[i]["totalAssets"] * 100).toFixed(2) + "%";
+        document.getElementById("ratio-roa-"+i).innerHTML = roa[i];
+        
+        roic[i]= (fis[i]['operatingIncome'] / fbs[i]["totalLiabilitiesAndStockholdersEquity"] * 100).toFixed(2) + "%";
+        document.getElementById("ratio-roic-"+i).innerHTML = roic[i];
+
+        }
+    }
 
 </script>
 @endsection
