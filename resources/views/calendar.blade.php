@@ -9,13 +9,13 @@
       <div class="card">
         <div class="card-body">
           <div class="row">
-            <div class="col-2 d-grid gap-2">
+            <div class="col-3 d-grid gap-2">
             <button type="button" class="btn btn-primary" id="prevWeek">Previous</button>
             </div>
-          <div class="col-8">
+          <div class="col-6">
             <input type="text" class="form-control" id="weekpicker"/>
           </div>
-          <div class="col-2 d-grid gap-2">
+          <div class="col-3 d-grid gap-2">
             <button type="button" class="btn btn-primary" id="nextWeek">Next</button>
           </div>
           </div>
