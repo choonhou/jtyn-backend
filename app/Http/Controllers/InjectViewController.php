@@ -9,4 +9,8 @@ class InjectViewController extends Controller
     public function financialData(){
         return view('financialData');
     }
+
+    public function calendarData(){
+        return view('calendar');
+    }
 }

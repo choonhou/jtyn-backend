@@ -18,6 +18,7 @@
   <!-- Vendor CSS Files -->
   <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.css')}}" rel="stylesheet">
   <link href="{{asset('assets/css/datatable.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/css/datatable.reorder.min.css')}}" rel="stylesheet">
   <link href="{{asset('assets/css/datatable.responsive.min.css')}}" rel="stylesheet">
@@ -35,18 +36,10 @@
 
   <!-- Vendor JS Files -->
   <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/chart.js/chart.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/echarts/echarts.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/quill/quill.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
-  <script src="{{asset('assets/vendor/tinymce/tinymce.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
   <script src="{{asset('assets/js/jquery.js')}}"></script>
   <script src="{{asset('assets/js/datatable.min.js')}}"></script>
   <script src="{{asset('assets/js/datatable.responsive.min.js')}}"></script>
   <script src="{{asset('assets/js/datatable.reorder.min.js')}}"></script>
-  <script src="{{asset('assets/js/main.js')}}"></script>
   <script src="{{asset('assets/js/swal.min.js')}}"></script>
   <script src="{{asset('assets/js/moment.js')}}"></script>
 

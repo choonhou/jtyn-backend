@@ -27,3 +27,4 @@ Route::get('/', function () {
 */
 
 Route::get('/finance',[InjectViewController::class,'financialData']);
+Route::get('/calendar',[InjectViewController::class,'calendarData']);

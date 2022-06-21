@@ -1232,7 +1232,7 @@ table{
         hideLoading();
       }).catch(err => {
         console.log(err);
-        if(fis.length == 0 && fbs.length == 0 && fcf.length == 0){
+        if(fis.length == 0 && fbs.length == 0 && fcf.length == 0 && cov.length == 0){
             stock = document.getElementById('search').value;
             document.getElementById('company-ticker').innerHTML = '"'+stock+'" might not exist';
         }else{
