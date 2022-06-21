@@ -238,7 +238,7 @@
       let resp = JSON.parse(responseText);
       let earning = resp;
       
-      let card = '<div class="card"> <div class="row"> <div class="col-12"> {date} </div> </div> <div class="row"> <div class="col-12"> <h6 class="symbol-text">{symbol}</h6> </div> </div> <div class="row"> <div class="col-6 value"> EPS : <span class="data {eps-status}">{eps}</span> </div> <div class="col-6 value"> Est. EPS : <span class="data">{eeps}</span> </div> </div> <div class="row"> <div class="col-6 value"> Revenue : <span class="data {rev-status}">{revenue}</span> </div> <div class="col-6 value"> Est. Revenue : <span class="data">{erevenue}</span> </div> </div> <div class="row" style="margin-top:10px;"> <div class="col-6"> {update} </div> <div class="col-6"> {fiscal} </div> </div> </div>';
+      let card = '<div class="card"> <div class="row"> <div class="col-12"> {date} </div> </div> <div class="row"> <div class="col-12"> <h6 class="symbol-text">{symbol}</h6> </div> </div> <div class="row"> <div class="col-6 value"> EPS : <span class="data {eps-status}">{eps}</span> </div> <div class="col-6 value"> Est. EPS : <span class="data">{eeps}</span> </div> </div> <div class="row"> <div class="col-6 value"> Revenue : <span class="data {rev-status}">{revenue}</span> </div> <div class="col-6 value"> Est. Revenue : <span class="data">{erevenue}</span> </div> </div> <div class="row" style="margin-top:10px;"> <div class="col-6"> Updated at : {update} </div> <div class="col-6"> Fiscal Date : {fiscal} </div> </div> </div>';
       for (let i = 0; i < earning.length; i++) {
         let earn = earning[i];
         let temp = card;
@@ -250,7 +250,7 @@
         let revenue = (earn["revenue"] == null)? "-": earn["revenue"];
         let erevenue = (earn["revenueEstimated"] == null)? "-": earn["revenueEstimated"];
         let update = (earn["updatedFromDate"] == null)? "-": earn["updatedFromDate"];
-        let fiscal = earn["fiscalDateEnding"];
+        let fiscal = (earn["fiscalDateEnding"] == null)? "-": earn["fiscalDateEnding"];
 
         let epsStatus = "";
         let revStatus = "";
@@ -295,7 +295,7 @@
       let resp = JSON.parse(responseText);
       let economic = resp;
 
-      let card = '<div class="card"> <div class="row"> <div class="col-6"> {date} ({country}) </div> <div class="col-6"> <h6 class="{impact}">{impact}<h6> </div> </div> <div class="row"> <div class="col-12"> <h6 class="symbol-text">{event}</h6> </div> </div> <div class="row"> <div class="col-6"> Actual : {actual} </div> <div class="col-6"> Prev : {previous} </div> </div> <div class="row"> <div class="col-6"> Changes : {change} ({changePercentage}%) </div> <div class="col-6"> {estimate} </div> </div> </div>';
+      let card = '<div class="card"> <div class="row"> <div class="col-6"> {date} ({country}) </div> <div class="col-6"> <h6 class="{impact}">{impact}<h6> </div> </div> <div class="row"> <div class="col-12"> <h6 class="symbol-text">{event}</h6> </div> </div> <div class="row"> <div class="col-6"> Actual : <span class="data {changeStatus}">{actual}</span> </div> <div class="col-6"> Prev : <span class="data">{previous}</span> </div> </div> <div class="row"> <div class="col-6"> Changes : <span class="data {changeStatus}">{change} ({changePercentage}%)</span> </div> <div class="col-6"> Estimated : <span class="data">{estimate}</span> </div> </div> </div>';
 
       for (let i = 0; i < economic.length; i++) {
         let econ = economic[i];
@@ -309,8 +309,20 @@
         let previous = (econ["previous"] == null)? "-": econ["previous"];
         let change = (econ["change"] == null)? "-": econ["change"];
         let changePercentage = (econ["changePercentage"] == null)? "-": econ["changePercentage"];
-        let estimate = econ["updatedFromDate"];
+        let estimate = (econ["estimate"] == null)? "-": econ["estimate"];
         let impact = (econ["impact"] == null)? "-": econ["impact"];
+
+        let changeStatus = "";
+
+        if(actual != null){
+          if(actual > previous){
+            changeStatus ="beat";
+          }else if(previous > actual){
+            changeStatus = "miss";
+          }else{
+
+          }
+        }
 
         temp = temp.replace("{date}",date);
         temp = temp.replace("{event}",event);
@@ -322,6 +334,8 @@
         temp = temp.replace("{estimate}",estimate);
         temp = temp.replace("{impact}",impact);
         temp = temp.replace("{impact}",impact);
+        temp = temp.replace("{changeStatus}",changeStatus);
+        temp = temp.replace("{changeStatus}",changeStatus);
 
         $("#economicCal").append(temp);
       }
