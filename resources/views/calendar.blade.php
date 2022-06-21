@@ -3,8 +3,8 @@
 
 @section('content')
 <section class="section profile">
-    <div class="row">
-    <div class="col-xl-12">
+  <div class="row">
+    <div class="col-12">
 
       <div class="card">
         <div class="card-body">
@@ -12,37 +12,54 @@
             <div class="col-3 d-grid gap-2">
             <button type="button" class="btn btn-primary" id="prevWeek">Previous</button>
             </div>
-          <div class="col-6">
-            <input type="text" class="form-control" id="weekpicker"/>
-          </div>
-          <div class="col-3 d-grid gap-2">
-            <button type="button" class="btn btn-primary" id="nextWeek">Next</button>
-          </div>
+            <div class="col-6">
+              <input type="text" class="form-control" id="weekpicker"/>
+            </div>
+            <div class="col-3 d-grid gap-2">
+              <button type="button" class="btn btn-primary" id="nextWeek">Next</button>
+            </div>
           </div>
 
         </div>
       </div>
 
-      <div class="card" id="wdata">
-            <div class="card-body pt-4">
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <h5>Earning Calendar</h5>
-                        <div class="border-md" id="earningCal">
-                            
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <h5>Economic Calendar</h5>
-                        <div class="border-md" id="economicCal">
-                        </div>
+      <div class="card">
+          <div class="card-body pt-4">
+              <ul class="nav nav-tabs nav-tabs-bordered">
+      
+                <li class="nav-item">
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#earning">Earning Calendar</button>
+                </li>
+      
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#economic">Economic Calendar</button>
+                </li>
+              </ul>
+              <div class="tab-content pt-3">
+                <div class="tab-pane fade pt-3 active show" id="earning">
+                    <div class="row">
+                      <div class="col-12">
+                          <div class="border-md" id="earningCal">
+                              
+                          </div>
+                      </div>
                     </div>
                 </div>
-            </div>
-      </div>
-      </div>
 
+                <div class="tab-pane fade pt-3" id="economic">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="border-md" id="economicCal">
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
     </div>
+  </div>
 </section>
 @endsection
 
