@@ -172,9 +172,6 @@
         fEarnURL = fEarnURL.replace("{dateTo}",dow[1]);
         fEconURL = fEconURL.replace("{dateFrom}",dow[0]);
         fEconURL = fEconURL.replace("{dateTo}",dow[1]);
-        
-        console.log(fEarnURL);
-        console.log(fEconURL);
 
         $("#earningCal").html("");
         $("#economicCal").html("");

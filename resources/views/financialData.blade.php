@@ -9,8 +9,14 @@
       <div class="card">
         <div class="card-body">
           <div class="row">
-          <div class="col-9">
+          <div class="col-7">
             <input type="text" class="form-control" id="search" value="AAPL" oninput="this.value = this.value.toUpperCase()"/>
+          </div>
+          <div class="col-2 gap-2">
+            <input type="radio" id="year" name="period" value="year" onclick="setYearly()" checked>
+            <label for="year">Yearly</label><br>
+            <input type="radio" id="quarter" name="period" value="quarter" onclick="setQuarterly()">
+            <label for="quarter">Quarterly</label><br>
           </div>
           <div class="col-3 d-grid gap-2">
             <button type="button" class="btn btn-primary" onclick="stockSearch()">Search</button>
@@ -1184,6 +1190,8 @@ table{
 
 <script>
     internationalNumberFormat = new Intl.NumberFormat('en-US');
+    var quarterly = false;
+    var quarterlyURL = "&period=quarter";
     var stock = "AAPL";
     var baseURL = '{{env('API_BASEURL')}}';
     var cfURL = "/api/v3/cash-flow-statement/{symbol}?limit=5&";
@@ -1252,6 +1260,13 @@ table{
       fbsURL = baseURL + bsURL + tokenUrl + token;
       covURL = baseURL + coURL + tokenUrl + token;
 
+      if(quarterly == true){
+        fcfURL = fcfURL + quarterlyURL;
+        fisURL = fisURL + quarterlyURL;
+        fbsURL = fbsURL + quarterlyURL;
+        covURL = covURL + quarterlyURL;
+      }
+
       fcfURL = fcfURL.replace("{symbol}",stock);
       fisURL = fisURL.replace("{symbol}",stock);
       fbsURL = fbsURL.replace("{symbol}",stock);
@@ -1311,7 +1326,11 @@ table{
           var el = document.getElementById(id);
           if(el !== null){
             if(id.includes("Year")){
-              el.innerHTML = financial[key2];
+              if(quarterly == true){
+                  el.innerHTML = financial["period"] +" "+ financial[key2];
+                }else{
+                  el.innerHTML = financial[key2];
+                }
             }else{
               if(id.includes("Ratio") || id.includes("ratio") || id.includes("eps")){
                 el.innerHTML = financial[key2].toFixed(4);
@@ -1352,7 +1371,11 @@ table{
             var el = document.getElementById(id);
             if(el !== null){
               if(id.includes("Year")){
-                el.innerHTML = financial[key2];
+                if(quarterly == true){
+                  el.innerHTML = financial["period"] +" "+ financial[key2];
+                }else{
+                  el.innerHTML = financial[key2];
+                }
               }else{
                 if(id.includes("Ratio") || id.includes("ratio") || id.includes("eps")){
                   el.innerHTML = financial[key2].toFixed(4);
@@ -1392,7 +1415,11 @@ table{
             var el = document.getElementById(id);
             if(el !== null){
               if(id.includes("Year")){
-                el.innerHTML = financial[key2];
+                if(quarterly == true){
+                  el.innerHTML = financial["period"] +" "+ financial[key2];
+                }else{
+                  el.innerHTML = financial[key2];
+                }
               }else{
                 if(id.includes("Ratio") || id.includes("ratio") || id.includes("eps")){
                   el.innerHTML = financial[key2].toFixed(4);
@@ -1595,6 +1622,14 @@ table{
          .attr("height", function(d) { return Math.abs(yScale(d) - yScale(0)); })
          .attr("width", xScale.bandwidth());
       
+    }
+
+    function setYearly(){
+      quarterly = false;
+    }
+
+    function setQuarterly(){
+      quarterly = true;
     }
 
 </script>
