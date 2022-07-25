@@ -24,6 +24,15 @@
       </div>
 
       <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <input type="text" class="form-control" id="searchFilter" placeholder="Search Filter..."/>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card">
           <div class="card-body pt-4">
               <ul class="nav nav-tabs nav-tabs-bordered">
       
@@ -235,7 +244,7 @@
       let resp = JSON.parse(responseText);
       let earning = resp;
       
-      let card = '<div class="card"> <div class="row"> <div class="col-12"> {date} </div> </div> <div class="row"> <div class="col-12"> <h6 class="symbol-text">{symbol}</h6> </div> </div> <div class="row"> <div class="col-6 value"> EPS : <span class="data {eps-status}">{eps}</span> </div> <div class="col-6 value"> Est. EPS : <span class="data">{eeps}</span> </div> </div> <div class="row"> <div class="col-6 value"> Revenue : <span class="data {rev-status}">{revenue}</span> </div> <div class="col-6 value"> Est. Revenue : <span class="data">{erevenue}</span> </div> </div> <div class="row" style="margin-top:10px;"> <div class="col-6"> Updated at : {update} </div> <div class="col-6"> Fiscal Date : {fiscal} </div> </div> </div>';
+      let card = '<div class="card calander-card" data-ticker="{divTicker}"> <div class="row"> <div class="col-12"> {date} </div> </div> <div class="row"> <div class="col-12"> <h6 class="symbol-text">{symbol}</h6> </div> </div> <div class="row"> <div class="col-6 value"> EPS : <span class="data {eps-status}">{eps}</span> </div> <div class="col-6 value"> Est. EPS : <span class="data">{eeps}</span> </div> </div> <div class="row"> <div class="col-6 value"> Revenue : <span class="data {rev-status}">{revenue}</span> </div> <div class="col-6 value"> Est. Revenue : <span class="data">{erevenue}</span> </div> </div> <div class="row" style="margin-top:10px;"> <div class="col-6"> Updated at : {update} </div> <div class="col-6"> Fiscal Date : {fiscal} </div> </div> </div>';
       for (let i = 0; i < earning.length; i++) {
         let earn = earning[i];
         let temp = card;
@@ -272,6 +281,7 @@
 
         temp = temp.replace("{date}",date);
         temp = temp.replace("{symbol}",symbol);
+        temp = temp.replace("{divTicker}",symbol);
         temp = temp.replace("{eps}",eps);
         temp = temp.replace("{eeps}",eeps);
         temp = temp.replace("{revenue}",revenue);
@@ -292,7 +302,7 @@
       let resp = JSON.parse(responseText);
       let economic = resp;
 
-      let card = '<div class="card"> <div class="row"> <div class="col-6"> {date} ({country}) </div> <div class="col-6"> <h6 class="{impact}">{impact}<h6> </div> </div> <div class="row"> <div class="col-12"> <h6 class="symbol-text">{event}</h6> </div> </div> <div class="row"> <div class="col-6"> Actual : <span class="data {changeStatus}">{actual}</span> </div> <div class="col-6"> Prev : <span class="data">{previous}</span> </div> </div> <div class="row"> <div class="col-6"> Changes : <span class="data {changeStatus}">{change} ({changePercentage}%)</span> </div> <div class="col-6"> Estimated : <span class="data">{estimate}</span> </div> </div> </div>';
+      let card = '<div class="card calander-card" data-ticker="{divTicker}"> <div class="row"> <div class="col-6"> {date} ({country}) </div> <div class="col-6"> <h6 class="{impact}">{impact}<h6> </div> </div> <div class="row"> <div class="col-12"> <h6 class="symbol-text">{event}</h6> </div> </div> <div class="row"> <div class="col-6"> Actual : <span class="data {changeStatus}">{actual}</span> </div> <div class="col-6"> Prev : <span class="data">{previous}</span> </div> </div> <div class="row"> <div class="col-6"> Changes : <span class="data {changeStatus}">{change} ({changePercentage}%)</span> </div> <div class="col-6"> Estimated : <span class="data">{estimate}</span> </div> </div> </div>';
 
       for (let i = 0; i < economic.length; i++) {
         let econ = economic[i];
@@ -322,6 +332,7 @@
         }
 
         temp = temp.replace("{date}",date);
+        temp = temp.replace("{divTicker}",event);
         temp = temp.replace("{event}",event);
         temp = temp.replace("{country}",country);
         temp = temp.replace("{actual}",actual);
@@ -340,5 +351,21 @@
     })
     }
 
+    $("#searchFilter").on("keyup",function(){
+      var filterText = $(this).val().toUpperCase();
+        if(filterText.length > 0){
+          $( ".calander-card" ).each(function( index ) {
+            if($(this).data("ticker").toUpperCase().indexOf(filterText) >= 0){
+              $(this).css("display", "block");
+            }else{
+              $(this).css("display", "none");
+            }
+          })
+        }else{
+          $( ".calander-card" ).each(function( index ) {
+            $(this).css("display", "block");
+          })
+        }  
+    });
 </script>
 @endsection
